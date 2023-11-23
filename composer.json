@@ -1,0 +1,10 @@
+{
+  "name": "dpo",
+  "description":"This is coding challenge",
+  "require": {
+    "php-amqplib/php-amqplib": "^3.6"
+  },
+  "require-dev": {
+
+  }
+}
