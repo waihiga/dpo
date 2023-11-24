@@ -10,8 +10,7 @@ class Producer extends Queue
 
     public function queue($queue,$msg)
     {
-        $queueMessages =  $this->getFileItems();
-        $queueMessages  = $this->unSerializeFromJson($queueMessages) ? : [];
+        $queueMessages  = $this->unSerializeFromJson($this->getFileItems()) ? : [];
 
         if (array_key_exists($queue,$queueMessages)){
             $queueMessages[$queue][]= $msg;
