@@ -27,6 +27,8 @@ class Database
     {
         $statement = $this->connection->prepare($query);
 
-        return $statement->execute();
+         $statement->execute();
+
+         $statement->fetchAll();
     }
 }
