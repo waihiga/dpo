@@ -8,13 +8,7 @@ $dotenv = \Dotenv\Dotenv::createImmutable(__DIR__);
 
 $dotenv->load();
 
-$dsn = "mysql:host=".$_ENV['DB_HOST'].";dbname=".$_ENV['DB_DATABASE'];
-$username = $_ENV['DB_USERNAME'];
-$password = $_ENV['DB_PASSWORD'] ;
-
-
 $posts = new Database();
-
 
 var_dump($posts->query("select * from users"));
 
