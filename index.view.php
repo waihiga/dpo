@@ -1,7 +1,12 @@
 <html>
 <body>
 <div>
-  <p>DPO Test</p>
+
+    <?php foreach ($items as $category=>$item): ?>
+
+      <p><?=$category?> : <?=implode(",",$item)?></p>
+
+    <?php endforeach; ?>
 </div>
 </body>
 </html>
