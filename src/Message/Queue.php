@@ -17,4 +17,13 @@ abstract class Queue
     {
        return file_get_contents($this->queueFile);
     }
+
+    public function serializeToJson($data)
+    {
+        return json_encode($data);
+    }
+    public function unSerializeFromJson($data)
+    {
+        return json_decode($data, true);
+    }
 }

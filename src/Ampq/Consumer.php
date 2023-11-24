@@ -7,10 +7,10 @@ use DPOPay\Message\Queue;
 
 class Consumer extends Queue
 {
-    public function consume($queue)
+    public function consume($queue=null)
     {
         $queueMessages = $this->getFileItems();
-        $queueMessages = json_decode($queueMessages, true) ?: [];
+        $queueMessages = $this->unSerializeFromJson($queueMessages) ?: [];
 
         return $queueMessages;
     }

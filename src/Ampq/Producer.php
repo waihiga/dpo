@@ -11,7 +11,7 @@ class Producer extends Queue
     public function queue($queue,$msg)
     {
         $queueMessages =  $this->getFileItems();
-        $queueMessages  = json_decode($queueMessages, true) ? : [];
+        $queueMessages  = $this->unSerializeFromJson($queueMessages) ? : [];
 
         if (array_key_exists($queue,$queueMessages)){
             $queueMessages[$queue][]= $msg;
@@ -19,6 +19,6 @@ class Producer extends Queue
             $queueMessages[$queue][] = $msg;
         }
 
-       return file_put_contents($this->queueFile, json_encode($queueMessages));
+       return file_put_contents($this->queueFile, $this->serializeToJson($queueMessages));
     }
 }
