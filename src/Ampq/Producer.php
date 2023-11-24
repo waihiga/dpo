@@ -18,6 +18,6 @@ class Producer extends Queue
             $queueMessages[$queue][] = $msg;
         }
 
-       return file_put_contents($this->queueFile, $this->serializeToJson($queueMessages));
+        file_put_contents($this->queueFile, $this->serializeToJson($queueMessages));
     }
 }
