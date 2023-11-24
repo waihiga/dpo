@@ -8,11 +8,16 @@ $dotenv = \Dotenv\Dotenv::createImmutable(__DIR__);
 
 $dotenv->load();
 
-$data  = new Database();
+$dsn = "mysql:host=".$_ENV['DB_HOST'].";dbname=".$_ENV['DB_DATABASE'];
+$username = $_ENV['DB_USERNAME'];
+$password = $_ENV['DB_PASSWORD'] ;
 
-$posts = $data->query("select * from users");
 
-var_dump($posts);
+$posts = new Database();
+
+
+var_dump($posts->query("select * from users"));
+
 $url = $_SERVER['REQUEST_URI'];
 
 if ($url  ==='/'){

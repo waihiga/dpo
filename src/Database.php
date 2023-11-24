@@ -17,9 +17,9 @@ class Database
         $password = $_ENV['DB_PASSWORD'] ;
 
         try {
-            $this->connection = new PDO($dsn,$username,$password);
+            $this->connection = new \PDO($dsn,$username,$password);
         }catch (\PDOException $e) {
-            echo "Connection failed: " . $e->getMessage();
+            echo  $e->getMessage();
         }
     }
 
@@ -27,8 +27,8 @@ class Database
     {
         $statement = $this->connection->prepare($query);
 
-         $statement->execute();
+        $statement->execute();
 
-         $statement->fetchAll();
+        return $statement->fetchAll();
     }
 }
