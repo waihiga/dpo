@@ -4,8 +4,6 @@ namespace DPOPay\Ampq;
 
 
 use DPOPay\Message\Queue;
-use PhpAmqpLib\Connection\AMQPStreamConnection;
-use PhpAmqpLib\Message\AMQPMessage;
 
 class Producer extends Queue
 {
