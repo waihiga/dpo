@@ -7,3 +7,4 @@
 
 
 echo (new \DPOPay\DpoTestChallenge())->sumFirstElevenNumbers(range(1,50));
+echo (new \DPOPay\JsonPlaceHolder())->getUsers();
