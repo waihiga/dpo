@@ -1,11 +1,11 @@
 <?php
 return [
 
-    'source' => config('app.name'),
+    'source' => 'dpo message',
 
-    'query-queue' => config('app.name').'query',
-    'command-queue' => config('app.name').'command',
-    'event-queue' => config('app.name').'queue',
+    'query-queue' => 'dpo-query',
+    'command-queue' => 'dp-command',
+    'event-queue' => 'dpo-queue',
 
     'routes_files' => [],
 
