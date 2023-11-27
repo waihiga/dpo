@@ -10,7 +10,6 @@ $dotenv->load();
 
 $posts = new Database();
 
-var_dump($posts->query("select * from users"));
 
 $url = $_SERVER['REQUEST_URI'];
 
